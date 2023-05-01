@@ -87,7 +87,7 @@ public class sparare : MonoBehaviour
     }
     IEnumerator shot()
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.05f);
         luce.intensity = 0f;
     }
 }
