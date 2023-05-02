@@ -6,7 +6,6 @@ Flicker Falò---> capire come funziona
 
 Zombie---> rivedere video Brackeys IA
 
-Creare AudioManager
 
 Script Spawn
 
