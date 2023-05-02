@@ -22,6 +22,8 @@ public class sparare : MonoBehaviour
     public Light2D luce;
     public GameObject pauseShoot;
 
+    public AudioManager Manager { get; set; }
+
     [SerializeField] private AudioSource shootSound;
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class sparare : MonoBehaviour
         luce.intensity = 0f;
         actualAmmo = maxAmmo;
         pauseShoot.gameObject.SetActive(false);
+        Manager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class sparare : MonoBehaviour
     void Sparare()
     {
         luce.intensity = 1f;
-        shootSound.Play();
+        Manager.Play("PistolShoot");
         actualAmmo--;
         GameObject proiettile = Instantiate(proiettilePrefab, puntoFuoco.position, puntoFuoco.rotation);
         Rigidbody2D RB = proiettile.GetComponent <Rigidbody2D>();

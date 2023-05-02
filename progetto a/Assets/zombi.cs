@@ -14,6 +14,7 @@ public class zombi : MonoBehaviour
     private sparare sparare;
     private GameObject player;
     private GameObject zombie;
+    public AudioManager Manager;
 
 
     [SerializeField] private AudioSource damageTaken;
@@ -26,25 +27,26 @@ public class zombi : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Manager = FindObjectOfType<AudioManager>();
+
         player = GameObject.Find("player");
         actualHP = HP;
         sparare = player.GetComponent<sparare>();
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
-        if (actualHP <= 0f && deathSound.isPlaying == false)
+        if (actualHP <= 0f)
         {
-            
-            deathSound.Play();
-            StartCoroutine(morte());
-        
+
+            //deathSound.Play();
+            StartCoroutine(Morte());
+
 
         }
-
-
     }
+
 
 
 
@@ -56,19 +58,20 @@ public class zombi : MonoBehaviour
                 actualHP = actualHP - sparare.pistolDMG;
                 if (actualHP <= 0f)
                 {
-                    return;
+                Manager.Play("ZombieDeath");
+                return;
                 }
-                damageTaken.Play();
+            Manager.Play("DamageTakenZombie");
 
-                Debug.Log("danni subiti" + sparare.pistolDMG);
-                Debug.Log("hp rimanenti" + actualHP);
-            }
+            Debug.Log("danni subiti" + sparare.pistolDMG);
+                    Debug.Log("hp rimanenti" + actualHP);
+                }
 
 
 
         }
 
-        IEnumerator morte()
+        IEnumerator Morte()
     {
         yield return new WaitForSeconds(2.5f);
         Destroy(gameObject);
