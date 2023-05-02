@@ -578,20 +578,26 @@ MonoBehaviour:
   Sounds:
   - Name: ZombieDeath
     Clip: {fileID: 8300000, guid: 74aa62a33b39247478296d7e7f5278e1, type: 3}
-    Volume: 0.567
+    Volume: 0.406
     Pitch: 1
     Source: {fileID: 0}
     SBlend: 1
   - Name: DamageTakenZombie
     Clip: {fileID: 8300000, guid: 14d7cb4950bb1df4fba614ae9ad81fb6, type: 3}
-    Volume: 0.567
+    Volume: 0.406
     Pitch: 1
     Source: {fileID: 0}
     SBlend: 1
   - Name: PistolShoot
     Clip: {fileID: 8300000, guid: 6fe56c519e594ab4e9eed73d0198dbfb, type: 3}
-    Volume: 0.567
-    Pitch: 1
+    Volume: 0.808
+    Pitch: 0.6
+    Source: {fileID: 0}
+    SBlend: 1
+  - Name: PistolReload
+    Clip: {fileID: 8300000, guid: 4a33110b4dc7b1b4eb46557707325523, type: 3}
+    Volume: 0.61
+    Pitch: 0.73
     Source: {fileID: 0}
     SBlend: 1
 --- !u!4 &171770591

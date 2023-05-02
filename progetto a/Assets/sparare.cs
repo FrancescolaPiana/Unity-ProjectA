@@ -13,7 +13,7 @@ public class sparare : MonoBehaviour
     public int maxAmmo = 7;
     public int actualAmmo;
     public float rate2 = 1.25f;
-    private float reloadTime = 1.0f;
+    private float reloadTime = 2.0f;
     public float pistolDMG = 9.0f;
 
     public bool shootCouldownBetween = false;
@@ -69,6 +69,7 @@ public class sparare : MonoBehaviour
     IEnumerator reload()
     {
         isReloading = true;
+        Manager.Play("PistolReload");
         pauseShoot.gameObject.SetActive(true);
         //Debug.Log("reloading");
         yield return new WaitForSeconds(reloadTime);
