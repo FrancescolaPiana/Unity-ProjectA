@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
         {
             S.Source = gameObject.AddComponent<AudioSource>();
             S.Source.clip = S.Clip;
-            S.Source.spatialBlend = 1;
+            S.Source.spatialBlend = S.SBlend;
             S.Source.volume = S.Volume;
             S.Source.pitch = S.Pitch;
 
