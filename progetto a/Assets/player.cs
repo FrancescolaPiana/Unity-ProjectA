@@ -38,6 +38,6 @@ public class player : MonoBehaviour
 
         Vector2 direzioneOsservata = posizioneMouse - RB.position;
         float angolo = Mathf.Atan2(direzioneOsservata.y, direzioneOsservata.x) * Mathf.Rad2Deg;
-        RB.rotation = angolo;
+        RB.rotation = angolo -90;
     }
 }
