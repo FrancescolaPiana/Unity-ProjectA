@@ -51,7 +51,11 @@ public class ZombieAi : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Path == null) // se non vi è percorso esci dall'if e ricomincia l'update senza guardare sotto
+        Vector2 direzioneOsservata = (Vector2)target.position - Rb.position;
+        float angolo = Mathf.Atan2(direzioneOsservata.y, direzioneOsservata.x) * Mathf.Rad2Deg;
+        Rb.rotation = angolo ;
+   
+        if (Path == null) // se non vi è percorso esci dall'if e ricomincia l'update senza guardare sotto
         {
             return;
         }

@@ -37,13 +37,12 @@ public class zombi : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+
         if (actualHP <= 0f)
         {
 
             //deathSound.Play();
             StartCoroutine(Morte());
-
-
         }
     }
 

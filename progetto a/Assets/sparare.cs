@@ -13,7 +13,7 @@ public class sparare : MonoBehaviour
     public int maxAmmo = 7;
     public int actualAmmo;
     public float rate2 = 1.25f;
-    private float reloadTime = 2.0f;
+    public float reloadTime = 2.0f;
     public float pistolDMG = 9.0f;
 
     public bool shootCouldownBetween = false;
